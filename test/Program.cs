@@ -2,9 +2,9 @@
 // треугольника. Если да, то вывести всю информацию по нему - площадь, периметр, значения углов треугольника в градусах, 
 //является ли он прямоугольным, равнобедренным, равносторонним.
 
-int[] triangles = new int[3];
+double[] triangles = new double[3];
 void TriangleSides()
-{ int perimetr = 0;
+{ double perimetr = 0;
   for (int i = 0; i < triangles.Length - 2; i++)
   {
       Console.Write($"Введите число а: ");
@@ -13,12 +13,9 @@ void TriangleSides()
       triangles[1] = Convert.ToInt32(Console.ReadLine());
       Console.Write($"Введите число c: ");
       triangles[2] = Convert.ToInt32(Console.ReadLine());
-      int a = triangles[0];
-      int b = triangles[1];
-      int c = triangles[2];
   }
   CheckSides();
-  double[] result = Area(triangles);
+  Area(triangles);
   perimetr = triangles[0] + triangles[1] + triangles[2];
   Console.WriteLine($"Периметр треугольника равен: {perimetr}");
 }
@@ -50,7 +47,7 @@ void CheckSides()
     }
 }
 TriangleSides();
-double[] Area(int[] triangles)
+double[] Area(double[] triangles)
 {   double polyperimetr = 0;
     double[] area = new double[4];
     for (int i = 0; i < triangles.Length - 2; i++)
