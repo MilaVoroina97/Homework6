@@ -4,6 +4,7 @@
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 double[,] coordinats = new double[2,2];
+double[] result = new double[2];
 void PrintNumbers()
 {
   for (int i = 0; i < coordinats.GetLength(0); i++)
@@ -32,12 +33,29 @@ PrintNumbers();
 PrintArray(coordinats);
 double[] Action(double[,] matrix)
 {   
-    double[] result = new double[2];
     result[0] = (matrix[1,1] - matrix[0,1])/(matrix[0,0] - matrix[1,0]); //x
     result[1] = matrix[0,0] * result[0] + matrix[0,1];
-    Console.WriteLine($"Точка пересечения прямых: ({result[0]}),({result[1]})");
     return result;
 }
-Action(coordinats);
+void Check(double[,] coordinats)
+{
+    
+  if (coordinats[0,0] == coordinats[1,0] && coordinats[0,1] == coordinats[1,1]) 
+  {
+    Console.Write("Прямые совпадают");
+  }
+  else if (coordinats[0,0] == coordinats[1,0] && coordinats[0,1] != coordinats[1,1]) 
+  {
+    Console.Write("Прямые параллельны");
+  }
+  else 
+  {
+    Action(coordinats);
+    Console.Write($"Точка пересечения прямых: ({result[0]}, {result[1]})");
+  }
+  
+}
+Check(coordinats);
+
 
 
