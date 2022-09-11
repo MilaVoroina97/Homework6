@@ -21,21 +21,21 @@ void TriangleSides()
 }
 void CheckSides()
 {
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 1; i++)
     {
         switch(triangles[i])
         {
-           case 1 when triangles[0] + triangles[1] <= triangles[2]:
+           case 1 when triangles[0] + triangles[1] >= triangles[2]:
            {
             Console.WriteLine("Данные числа являются сторонами треугольника.");
             break;
             }
-           case 2 when triangles[0] + triangles[2] <= triangles[1]:
+           case 2 when triangles[0] + triangles[2] >= triangles[1]:
             {
             Console.WriteLine("Данные числа являются сторонами треугольника.");
             break;
             }
-           case 3 when triangles[1] + triangles[2] <= triangles[0]:
+           case 3 when triangles[1] + triangles[2] >= triangles[0]:
            {
             Console.WriteLine("Данные числа являются сторонами треугольника.");
             break;
